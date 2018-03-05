@@ -1,0 +1,142 @@
+*{
+  box-sizing: border-box;
+}
+.body{
+  padding: 0px;
+  margin: 0px;
+}
+.container{
+  height: 100vh;
+  width: 99vw;
+  box-sizing: border-box;
+  background-color:rgba(0,0,0,0.3);
+
+  padding: 0px;
+  margin: 0px;
+}
+
+div#Home{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(10, 10, 23, 0.9);
+  border-width: 0px;
+  border-style: solid;
+  border-color: red;
+
+  /*The Paragraphs inside of it will have*/
+  font-size: 35px;
+  color: white
+
+
+}
+p#Home{
+  border-width: 0px;
+  border-style: dashed;
+  border-color: blue;
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 3px;
+}
+
+@media screen and (max-width: 500px){
+  div#Home{
+    font-size: 30px;
+  }
+}
+
+div.outDoor{
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: blue;
+
+  padding: 0px;
+  margin: 0px;
+}
+i#Home{
+  color: yellow;
+}
+p#space{
+  height: 3%;
+  width: 3%;
+}
+div#rowHome{
+  width: 900px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: blue;
+
+  margin:0px;
+  padding:0px;
+}
+
+p#works{
+  color: DarkMagenta;
+}
+
+div.navigationBar{
+  height: 5vh;
+  width: 99vw;
+  position: sticky;
+  top: 0;
+
+  background-color: rgba(0,0,0, 1);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: blue;
+
+  padding: 0px;
+  margin: 0px;
+
+}
+
+p#navBar{
+  color: white;
+  font-size: 30px;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: blue;
+
+  margin:0px;
+  padding: 0px;
+}
+
+a#navBar{
+  color:white;
+  text-decoration: none;
+}
+
+
+div#About{
+  background-color: rgba(0,0,0,0.5);
+}
+
+div#Porfoltio{
+  background-color: rgba(0,0,0,0.4);
+}
+
+div#Contact{
+  background-color: rgba(0,0,0,0.4);
+}
