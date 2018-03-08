@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
 import './style.css';
-import {Home, About, NavBar} from './myComponents';
-
-var Wait = function(miliseconds){
-  var d = new Date();
-  do{}while(new Date() - d <= miliseconds);
-};
+import {Home, About, NavBar, Forms} from './myComponents';
 
 export default class WebSite extends Component{
   render(){
@@ -19,12 +14,13 @@ export default class WebSite extends Component{
           <NavBar />
           <About />
           <div className="container" id="Portfolio">
+            <p className="title">Personal and Payed Works</p>
           </div>
 
-          <div className="container" id="Contact">
-          </div>
+          <Forms />
         </body>
         <footer>
+          <p></p>
         </footer>
       </html>
 
