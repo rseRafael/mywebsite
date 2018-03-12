@@ -1,0 +1,175 @@
+div.homeDiv{
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(28, 34, 49);
+  border-width: 0px;
+  border-style: solid;
+  border-color: red;
+
+  margin: 0px;
+  padding:0px;
+}
+
+div.outDoor{
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  justify-content: center;
+  align-items: flex-start;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: white;
+
+  padding: 0px;
+  margin: 0px;
+}
+
+div.homeRow{
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: white;
+
+  margin:0px;
+  padding:0px;
+}
+
+span#Home{
+  color: rgb(227, 27, 109);
+}
+@media screen and (min-width: 1030px){
+  p.homeParagraph{
+    /*The Paragraphs inside of it will have*/
+    font-family: 'Raleway';
+    font-size: 45px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+
+}
+@media screen and (max-width: 1029px){
+  p.homeParagraph{
+    /*The Paragraphs inside of it will have*/
+    font-family: 'Raleway';
+    font-size: 35px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 850px){
+  p.homeParagraph{
+    font-family: 'Raleway';
+    font-size: 25px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 630px){
+  p.homeParagraph{
+    font-family: 'Raleway';
+    font-size: 20px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 535px){
+  p.homeParagraph{
+    font-family: 'Raleway';
+    font-size: 15px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 365px){
+  p.homeParagraph{
+    font-family: 'Raleway';
+    font-size: 12px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 310px){
+  p.homeParagraph{
+    font-family: 'Raleway';
+    font-size: 9px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 220px){
+  p.homeParagraph{
+    font-family: 'Raleway';
+    font-size: 7px;
+    color: white;
+
+    border-width: 0px;
+    border-style: solid;
+    border-color: white;
+
+    margin: 0px;
+    padding: 0px;
+  }
+}

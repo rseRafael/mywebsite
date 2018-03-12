@@ -1,11 +1,16 @@
-*{
+
+body{
   box-sizing: border-box;
-}
-.body{
+  width: 99.2159vw;
+
   padding: 0px;
   margin: 0px;
-  width: 99vw;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: red;
 }
+
 .container{
   height: 100vh;
   width: 100%;
@@ -20,80 +25,6 @@
 
 }
 
-div#Home{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-
-  background-color: rgb(28, 34, 49);
-  border-width: 0px;
-  border-style: solid;
-  border-color: red;
-
-  /*The Paragraphs inside of it will have*/
-  font-size: 45px;
-  font-family: 'Raleway';
-  color: white;
-
-
-}
-p#Home{
-  border-width: 0px;
-  border-style: dashed;
-  border-color: blue;
-
-  margin: 0px;
-  padding: 0px;
-  padding-bottom: 3px;
-}
-
-@media screen and (max-width: 500px){
-  div#Home{
-    font-size: 30px;
-  }
-}
-
-div.outDoor{
-  height: 30%;
-  display: flex;
-  flex-direction: column;
-
-  justify-content: flex-start;
-  align-items: flex-start;
-
-  border-width: 0px;
-  border-style: solid;
-  border-color: blue;
-
-  padding: 0px;
-  margin: 0px;
-}
-span#Home{
-  color: rgb(227, 27, 109);
-}
-p#space{
-  height: 3%;
-  width: 3%;
-}
-div#rowHome{
-  width: 900px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-
-  border-width: 0px;
-  border-style: solid;
-  border-color: blue;
-
-  margin:0px;
-  padding:0px;
-}
-
-p#works{
-  color: rgb(227, 27, 109);
-}
 
 /*Navigation Bar  Start HERE*/
 div.navigationBar{
@@ -118,7 +49,6 @@ div.navigationBar{
   padding: 0px;
   margin: 0px;
 
-  opacity: 1;
 
   overflow: visible
 }
@@ -254,8 +184,46 @@ div#Contact{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+form.contactForm{
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
 
 }
+div.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+}
+div.inputForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  color: rgb(100, 100, 100);
+}
+input.inputBox{
+  box-sizing: border-box;
+  height: 30px;
+  width: 250px;
+  background-color: rgb(80, 80, 80);
+
+  padding:0px;
+  margin: 0px;
+
+  color: rgb(200, 200, 200);
+  font-size: 17px;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+}
+
 form.formContainer{
   display: flex;
   flex-direction: row;
@@ -265,4 +233,18 @@ form.formContainer{
 }
 #inputStyle{
   width: 400px;
+}
+div.footer{
+  width: 99vw;
+  height: 20vh;
+
+  margin: 0px;
+  padding: 0px;
+}
+footer.base{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(80, 80, 80);
+  padding: 0px;
+  margin:0px;
 }

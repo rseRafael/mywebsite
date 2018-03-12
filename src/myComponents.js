@@ -1,91 +1,9 @@
 import React, {Component} from 'react';
-import js_logo from './images/js_logo.png';
-import html_logo from './images/html_logo.png';
-import css_logo from './images/css_logo.png';
-import react_logo from './images/react_logo.svg';
-import node_logo from './images/node_logo.jpg';
-import py_logo from './images/python_logo.jpg';
-import './style.css';
 
+import './BodyStyle.css';
 
-class Home extends Component{
-  constructor(props){
-    super(props);
-    this.obj={
-      words: ["WebSites", "Web Applications", "Front-end Development", "Backend Development", ],
-      index: 0,
-      index2: 0,
-      text: "",
-
-    };
-    this.state={text: "", dot: ""};
-  }
-  componentDidMount() {
-    this.funcOne = setInterval(
-      ()=>{
-        this.check();
-      },
-      2000
-    );
-    this.funcTwo = setInterval(
-      ()=>{
-        this.outDoor();
-      },
-      50
-    );
-  }
-  componentWillUnmount() {
-    clearInterval(this.outDoor);
-    clearInterval(this.funcOne);
-    clearInterval(this.funcTwo);
-  }
-  check(){
-    if(this.obj.index2 >= this.obj.words[this.obj.index].length){
-      this.obj.index2 = 0;
-      this.obj.index++;
-      this.obj.text =String(" ");
-      this.setState({dot:" "});
-      this.setState({text:this.obj.text});
-    }
-    if(this.obj.index >= this.obj.words.length){
-      this.obj.index = 0;
-    }
-  }
-  outDoor(){
-    if(this.obj.index2 === this.obj.words[this.obj.index].length){
-      this.setState({dot: "."});
-    }
-    else if(this.obj.index2 > this.obj.words[this.obj.index].length){
-      //do nothing
-      document.getElementById("dot").style.borderWidth = "10px";
-
-    }
-    else{
-      this.obj.text += this.obj.words[this.obj.index][this.obj.index2++];
-      this.setState({text:this.obj.text});
-    }
-  }
-
-
-  render(){
-    return(
-      <div className="container" id="Home">
-        <div className="outDoor">
-          <p id="Home">{`Hello, I'm `}<span id="Home">{'Rafael Santos'}</span>. {`I'm a software developer.`}</p>
-          <div id="rowHome">
-            <p>{`I work with:`}</p>
-            <p id="space"> </p>
-            <p id="works">{this.state.text}</p>
-            <p id="dot">{this.state.dot}</p>
-          </div>
-         </div>
-      </div>
-    );
-  }
-}
 class NavBar extends Component{
   Func(){
-    var body = document.body;
     var docElem = document.documentElement;
     var divs = [
       document.getElementById("Home").clientHeight,
@@ -127,7 +45,7 @@ class NavBar extends Component{
         console.log("you are at Contact");
       }
       for(var i = 0; i< links.length; i++){
-        if(links[i] != Elem){
+        if(links[i] !== Elem){
           links[i].className = links[i].classList[0];
         }
       }
@@ -153,6 +71,7 @@ class NavBar extends Component{
     )
   }
 }
+/*
 class About extends Component{
   render(){
     return(
@@ -170,11 +89,11 @@ class About extends Component{
       </div>
     )
   }
-}
+}*/
 class InputBox extends Component{
   constructor(props){
     super(props);
-    this.state = {};
+    this.state = {text:this.props.value,};
   }
   componentDidMount(){
     console.log("okey");
@@ -184,31 +103,43 @@ class InputBox extends Component{
 
   render(){
     return(
-      <input />
+      <input value={this.state.text}/>
     );
   }
 
 }
 
 class Forms extends Component{
-  constructor(props){
-    super(props);
-  }
   render(){
     return(
       <div className="container" id="Contact">
-        <p>Do you want to hire me ?</p>
-        <form /*className="formContainer"*/>
-          <InputBox Value="*Name" type="text" name="firstname" id="fname"/>
-          <input id="eba" type="text"  value={"fuck"} />
-          <input type="text" value="lastName" id="inputStyle"></input>
-        </form>
-        <form>
-          <input></input>
-          <input></input>
+        <form className="contactForm">
+          <div className="form">
+            <div className ="inputForm">
+              <p>Name:</p>
+              <input className= "inputBox" type="text"/>
+            </div>
+            <div className="inputForm">
+              <p>Email Adress:</p>
+              <input className= "inputBox" type="text"/>
+            </div>
+            <div className ="inputForm">
+              <p>Phone number:</p>
+              <input className= "inputBox" type="text"/>
+            </div>
+            <div className="inputForm">
+              <p>Website:</p>
+              <input className= "inputBox" type="text"/>
+            </div>
+          </div>
+          <div className="form">
+            <p>How can i help you?</p>
+            <input className="inputBox" type="text"/>
+            <InputBox value="FuckThis"/>
+          </div>
         </form>
       </div>
     );
   }
 }
-export {Home, NavBar, About, Forms};
+export { NavBar,  Forms};

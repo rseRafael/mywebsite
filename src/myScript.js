@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
-import './style.css';
-import {Home, About, NavBar, Forms} from './myComponents';
+import './BodyStyle.css';
+import {Home} from './MyComponents/HomeComponent.js';
+import {About} from './MyComponents/AboutComponent.js';
+import {NavBar, Forms} from './myComponents';
 
 export default class WebSite extends Component{
   render(){
     return(
-      <html>
-        <head>
-          <title>Rafael Santos</title>
-          </head>
         <body>
           <Home />
           <NavBar />
@@ -18,12 +16,9 @@ export default class WebSite extends Component{
           </div>
 
           <Forms />
+          <div className="">
+          </div>
         </body>
-        <footer>
-          <p></p>
-        </footer>
-      </html>
-
     );
   }
 }

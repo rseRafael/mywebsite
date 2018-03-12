@@ -1,0 +1,233 @@
+
+/*Por Algum motivo esta merda nao esta funcionando*/
+div.aboutDiv{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;*/
+
+  background-color: rgba(0,0,0,1);
+}
+
+div#About{
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: rgb(255, 255, 255);
+}
+/*No momento de producao deste codigo as className e .<class Name> simplesmente pararam de funcionar*/
+
+
+
+div#imgDiv{
+  box-sizing: border-box;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: rgb(255,255,255);
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: black;
+
+  margin:0px;
+  padding: 0px;
+}
+
+  img.imgFormat:hover{
+    opacity: 1;
+  }
+
+  p.aboutParagraph{
+    color: rgb(180, 180, 180);
+    font-size: 40px;
+
+    margin: 0px;
+    padding: 0px;
+
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(150, 150, 150);
+  }
+
+p#different{
+  color: lightblue;
+}
+/*
+div.ratingDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}*/
+
+i#shit{
+  font-size: 100px;
+  color: red;
+}
+.imgDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ratingDiv{
+  display: none;
+
+}
+
+.imageSettings{
+  height: 100px;
+  width: 100px;
+}
+
+.imgactive{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  border-width: 0px;
+  border-style: solid;
+  border-color: red;
+}
+
+@media screen and (min-width: 1540px){
+
+  p#different{
+    color: red;
+  }
+
+  img.imgFormat{
+    height: 200px;
+    width: 200px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(180, 180, 180, 0.3);
+
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+}
+
+
+@media screen and (max-width: 1539px){
+  @keyframes effect {
+    from{ left: -1000px;}
+    to{ left: 0px;}
+  }
+  p#different{
+    color: red;
+  }
+  img.imgFormat{
+    height: 150px;
+    width: 150px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(180, 180, 180, 0.3);
+
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    opacity: 0.4;
+
+    position: relative;
+    left: 0px;
+    animation-name: effect;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+  }
+}
+
+@media screen and (max-width: 1320px){
+  p#different{
+    color: red;
+  }
+  img.imgFormat{
+    height: 100px;
+    width: 100px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(180, 180, 180, 0.3);
+
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    opacity: 0.4;
+  }
+}
+
+@media screen and (max-width: 890px){
+  p#different{
+    color: red;
+  }
+  img.imgFormat{
+    height: 80px;
+    width: 80px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(180, 180, 180, 0.3);
+
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    opacity: 0.4;
+  }
+}
+
+@media screen and (max-width: 695px){
+  p#different{
+    color: red;
+  }
+  img.imgFormat{
+    height: 50px;
+    width: 50px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(180, 180, 180, 0.3);
+
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    opacity: 0.4;
+  }
+}
+
+@media screen and (max-width: 695px){
+  p#different{
+    color: red;
+  }
+  img.imgFormat{
+    height: 30px;
+    width: 30px;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(180, 180, 180, 0.3);
+
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+    opacity: 0.4;
+  }
+}
