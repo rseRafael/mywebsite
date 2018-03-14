@@ -1,0 +1,46 @@
+.navBarDiv{
+  height: 7vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: rgb(28, 34, 60);
+  border-bottom-width: 10px;
+  border-bottom-style: solid;
+  border-bottom-color: lightblue;
+
+  display: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.activatedBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  animation-name: navBarShowUp;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+
+  position: sticky;
+  top: 0px;
+}
+.linkText{
+  text-decoration: none;
+  color: white;
+}
+.activatedLink{
+  text-decoration: none;
+  color: rgb(227, 27, 109);
+}
+@keyframes navBarShowUp {
+  from{
+    position: relative;
+    right: 1000px;
+  }
+  to{
+    position: relative;
+    right: 0px;
+  }
+}

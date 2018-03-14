@@ -1,19 +1,6 @@
 
 /*Por Algum motivo esta merda nao esta funcionando*/
-div.aboutDiv{
-  box-sizing: border-box;
-  height: 100vh;
-  width: 100%;
-
-  /*display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;*/
-
-  background-color: rgba(0,0,0,1);
-}
-
-div#About{
+div.AboutDiv{
   box-sizing: border-box;
   height: 100vh;
   width: 100%;
@@ -25,6 +12,7 @@ div#About{
 
   background-color: rgb(255, 255, 255);
 }
+
 /*No momento de producao deste codigo as className e .<class Name> simplesmente pararam de funcionar*/
 
 
@@ -47,12 +35,9 @@ div#imgDiv{
   padding: 0px;
 }
 
-  img.imgFormat:hover{
-    opacity: 1;
-  }
 
   p.aboutParagraph{
-    color: rgb(180, 180, 180);
+    color: rgb(50, 50, 50);
     font-size: 40px;
 
     margin: 0px;
@@ -66,13 +51,7 @@ div#imgDiv{
 p#different{
   color: lightblue;
 }
-/*
-div.ratingDiv{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}*/
+
 
 i#shit{
   font-size: 100px;
@@ -91,11 +70,13 @@ i#shit{
 }
 
 .imageSettings{
-  height: 100px;
-  width: 100px;
+  height: 135px;
+  width: 135px;
+
+  border-top-right-radius: 50%;
 }
 
-.imgactive{
+div.imgActived{
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -105,6 +86,23 @@ i#shit{
   border-width: 0px;
   border-style: solid;
   border-color: red;
+}
+div.softwareAbout{
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+div.bottomBorder{
+  box-sizing: border-box;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(150, 150, 150);
+  padding-bottom: 15px;
 }
 
 @media screen and (min-width: 1540px){
@@ -126,6 +124,14 @@ i#shit{
   }
 }
 
+div.imageRow{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
 
 @media screen and (max-width: 1539px){
   @keyframes effect {

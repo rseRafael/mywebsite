@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './HomeStyle.css';
 
+var clickableMovement = null;
 
 export class Home extends Component{
   constructor(props){
@@ -10,21 +11,23 @@ export class Home extends Component{
       index: 0,
       index2: 0,
       text: "",
+      timer: null,
+      miliseconds: 200,
     };
     this.state={text: "", dot: "", width: document.documentElement.offsetWidth + 15};
   }
   componentDidMount() {
     this.funcOne = setInterval(
       ()=>{
-        this.check();
+        this.checking();
       },
-      2000
+      2500
     );
     this.funcTwo = setInterval(
       ()=>{
-        this.outDoor();
+        this.settingText();
       },
-      35
+      40
     );
 
     this.funcThree = setInterval(
@@ -35,6 +38,22 @@ export class Home extends Component{
       },
       50
     );
+    document.getElementById('clickDiv').onclick = ()=>{
+      clickableMovement = setInterval(
+        () => {
+          if(document.documentElement.scrollTop < document.getElementById('Home').clientHeight){
+              document.documentElement.scrollTop +=  document.getElementById('Home').clientHeight/10;
+              if(document.documentElement.scrollTop > document.getElementById('Home').clientHeight){
+                document.documentElement.scrollTop = document.getElementById('Home').clientHeight;
+              }
+          }
+          else{
+            clearInterval(clickableMovement);
+          }
+        },
+        25
+      );
+    }
   }
   componentWillUnmount() {
     clearInterval(this.outDoor);
@@ -42,7 +61,7 @@ export class Home extends Component{
     clearInterval(this.funcTwo);
     clearInterval(this.funcThree);
   }
-  check(){
+  checking(){
     if(this.Variables.index2 >= this.Variables.words[this.Variables.index].length){
       this.Variables.index2 = 0;
       this.Variables.index++;
@@ -54,13 +73,28 @@ export class Home extends Component{
       this.Variables.index = 0;
     }
   }
-  outDoor(){
+  settingText(){
     if(this.Variables.index2 === this.Variables.words[this.Variables.index].length){
       this.setState({dot: "."});
+      this.Variables.index2++;
+      this.Variables.timer = new Date();
     }
     else if(this.Variables.index2 > this.Variables.words[this.Variables.index].length){
-      //do nothing
 
+      if(document.getElementById('variableText').classList[1] === "activeBorder"){
+
+        if(new Date() - this.Variables.timer >= this.Variables.miliseconds){
+          document.getElementById('variableText').className = "homeParagraph unactiveBorder";
+          this.Variables.timer = new Date();
+        }
+      }
+      else if(document.getElementById('variableText').classList[1] === "unactiveBorder"){
+
+        if(new Date() - this.Variables.timer >= this.Variables.miliseconds){
+          document.getElementById('variableText').className = "homeParagraph activeBorder";
+          this.Variables.timer = new Date();
+        }
+      }
     }
     else if(this.Variables.index2 <= this.Variables.words[this.Variables.index].length){
       this.Variables.text += this.Variables.words[this.Variables.index][this.Variables.index2++];
@@ -71,13 +105,14 @@ export class Home extends Component{
 
   render(){
     return(
-      <div className="container homeDiv" id="Home">
-          <div className="outDoor">
+      <div className="homeDiv" id="Home">
+        <div className="homeContent">
+          <div className="homeTextDiv">
               <p className="homeParagraph">{`Hello, I'm `}<span id="Home">{'Rafael Santos'}</span>. {`I'm a software developer.`}</p>
-              <div className="homeRow">
-                  <p className="homeParagraph">{"I work with "} <span id="Home">{this.state.text}</span>{this.state.dot}</p>
-              </div>
-           </div>
+              <p className="homeParagraph unactiveBorder" id='variableText'>{"I work with "} <span id="Home">{this.state.text}</span>{this.state.dot}</p>
+          </div>
+          <div className="clickableDiv" id="clickDiv"></div>
+        </div>
       </div>
     );
   }

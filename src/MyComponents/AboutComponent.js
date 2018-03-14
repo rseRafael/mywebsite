@@ -62,21 +62,21 @@ class Image extends Component{
   }
   componentDidMount(){
     //this.props.rateId = this.props.imgId;
-    document.getElementById(this.props.imgId).onmouseover = () =>{
+    document.getElementById(this.props.imgId).onmouseover = ()=>{
       try{
-        document.getElementById(this.props.imgId + "Rate").className += " imgactive";
+        document.getElementById(this.props.imgId + "Rate").className += " imgActived";
       }
       catch(e){
-        console.log("erro um", e);
+        console.log("Error whith mouseouver", e);
         //do nothing
       }
     }
-    document.getElementById(this.props.imgId).onmouseout = () =>{
+    document.getElementById(this.props.imgId).onmouseout = ()=>{
       try{
         document.getElementById(this.props.imgId + "Rate").className = document.getElementById(this.props.imgId + "Rate").classList[0];
       }
       catch(e){
-        console.log("erro dois", e);
+        console.log("Error whith mouseout", e);
         //do nothing
       }
     }
@@ -109,35 +109,19 @@ export class About extends Component{
   render(){
     return(
       <div className="AboutDiv" id="About">
-        <p className="aboutParagraph" >Software Skills</p>
-        <p className="aboutParagraph" id="different">{this.state.width}</p>
-        <div className="imageRow">
-          <Image imgSrc={js_logo} imgAlt={"Javascript"} imgId={"jsLogo"} rate={"four"}/>
-          <Image imgSrc={html_logo} imgAlt={"HTML"} imgId={"htmlLogo"} rate={"four"}/>
-          <Image imgSrc={css_logo} imgAlt={"CSS"} imgId={"cssLogo"} rate={"four"}/>
-        </div>
-
-        {/*
-        <div className="imgDiv" id="imgDiv">
-            <img src={js_logo}  className="imgFormat" id="imgFormat" name alt="javascript"/>
-            <div className="ratingDiv" id="javascriptRating">
-                <i className="fas fa-star" style={{fontSize:40, color: "rgb(255, 215, 7)"}}></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
-              <i className="fas fa-star"></i>
+          <div className="softwareAbout">
+            <p className="aboutParagraph" >Software Skills</p>
+            <div className="imageRow">
+              <Image imgSrc={js_logo} imgAlt={"Javascript"} imgId={"jsLogo"} rate={"four"}/>
+              <Image imgSrc={html_logo} imgAlt={"HTML"} imgId={"htmlLogo"} rate={"four"}/>
+              <Image imgSrc={css_logo} imgAlt={"CSS"} imgId={"cssLogo"} rate={"four"}/>
             </div>
-            <img src={html_logo}  className="imgFormat" id="imgFormat" alt="html"/>
-            <img src={css_logo}  className="imgFormat"  id="imgFormat" alt="css"/>
-
-        </div>
-        <div className="imgDiv" id="imgDiv">
-          <img src={react_logo}  className="imgFormat" alt="react"/>
-          <img src={node_logo}  className="imgFormat" alt="node"/>
-          <img src={py_logo} className="imgFormat" alt="python"/>
-        </div>
-        <i className="fa fa-cloud"></i>
-        <i class="far fa-address-book"></i>*/}
+            <div className="imageRow bottomBorder">
+              <Image imgSrc={react_logo} imgAlt={"React and React Native"} imgId={"reactLogo"} rate={"four"}/>
+              <Image imgSrc={node_logo} imgAlt={"Node.JS"} imgId={"nodejsLogo"} rate={"three"}/>
+              <Image imgSrc={py_logo} imgAlt={"Python 2 & 3"} imgId={"pyLogo"} rate={"two"}/>
+            </div>
+          </div>
       </div>
 
     );
