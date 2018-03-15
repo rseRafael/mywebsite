@@ -2,12 +2,12 @@
 /*Por Algum motivo esta merda nao esta funcionando*/
 div.AboutDiv{
   box-sizing: border-box;
-  height: 100vh;
+  height: 150vh;
   width: 100%;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
 
   background-color: rgb(255, 255, 255);
@@ -88,15 +88,20 @@ div.imgActived{
   border-color: red;
 }
 div.softwareAbout{
-  height: 50%;
+  height: 60vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 
-}
+  box-sizing: border-box;
 
+}
+div.imageHolder{
+  height: 100%;
+  width: 33%;
+}
 div.bottomBorder{
   box-sizing: border-box;
   border-bottom-width: 2px;
@@ -125,13 +130,14 @@ div.bottomBorder{
 }
 
 div.imageRow{
-  width: 30%;
+  width: 50%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 
 }
+
 
 @media screen and (max-width: 1539px){
   @keyframes effect {

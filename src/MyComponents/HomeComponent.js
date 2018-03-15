@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './HomeStyle.css';
+import {NavBar,goTo, navObj, getNavBarHeight} from './NavigationBarComponent.js';
 
-var clickableMovement = null;
 
 export class Home extends Component{
   constructor(props){
@@ -39,21 +39,10 @@ export class Home extends Component{
       50
     );
     document.getElementById('clickDiv').onclick = ()=>{
-      clickableMovement = setInterval(
-        () => {
-          if(document.documentElement.scrollTop < document.getElementById('Home').clientHeight){
-              document.documentElement.scrollTop +=  document.getElementById('Home').clientHeight/10;
-              if(document.documentElement.scrollTop > document.getElementById('Home').clientHeight){
-                document.documentElement.scrollTop = document.getElementById('Home').clientHeight;
-              }
-          }
-          else{
-            clearInterval(clickableMovement);
-          }
-        },
-        25
-      );
+      console.log(getNavBarHeight());
+      goTo(navObj.divs[0] - getNavBarHeight(), 600);
     }
+    this.locateMainContent();
   }
   componentWillUnmount() {
     clearInterval(this.outDoor);
@@ -101,18 +90,23 @@ export class Home extends Component{
       this.setState({text:this.Variables.text});
     }
   }
-
+  locateMainContent(){
+    document.getElementById('homeMainContent').className += " locateContent";
+    document.getElementById('homeMainContent').style.top = navObj.divs[0]/3;
+    console.log('done');
+  }
 
   render(){
     return(
       <div className="homeDiv" id="Home">
-        <div className="homeContent">
-          <div className="homeTextDiv">
+        <div className="homeContent" id="homeMainContent">
+          <div className="homeTextDiv" >
               <p className="homeParagraph">{`Hello, I'm `}<span id="Home">{'Rafael Santos'}</span>. {`I'm a software developer.`}</p>
               <p className="homeParagraph unactiveBorder" id='variableText'>{"I work with "} <span id="Home">{this.state.text}</span>{this.state.dot}</p>
           </div>
           <div className="clickableDiv" id="clickDiv"></div>
         </div>
+        <NavBar/>
       </div>
     );
   }

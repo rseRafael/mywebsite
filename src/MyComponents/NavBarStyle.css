@@ -4,7 +4,7 @@
   box-sizing: border-box;
 
   background-color: rgb(28, 34, 60);
-  border-bottom-width: 10px;
+  border-bottom-width: 5px;
   border-bottom-style: solid;
   border-bottom-color: lightblue;
 
@@ -22,10 +22,27 @@
   animation-name: navBarShowUp;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
-
-  position: sticky;
+}
+.fixedBar{
+  position: fixed;
   top: 0px;
 }
+.locateContent{
+  position: relative;
+  top: 30%;
+}
+
+.deactivatedBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  animation-name: navBarHidden;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
 .linkText{
   text-decoration: none;
   color: white;
@@ -33,6 +50,17 @@
 .activatedLink{
   text-decoration: none;
   color: rgb(227, 27, 109);
+}
+
+@keyframes navBarHidden {
+  from{
+    position: relative;
+    right: 0px;
+  }
+  to{
+    position: relative;
+    right: 2000px;
+  }
 }
 @keyframes navBarShowUp {
   from{
@@ -43,4 +71,12 @@
     position: relative;
     right: 0px;
   }
+}
+
+#testDiv{
+  height: 100%;
+  width: 10px;
+  border-width: 1px;
+  border-color: red;
+  border-style: solid;
 }

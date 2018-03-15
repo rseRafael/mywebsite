@@ -6,7 +6,7 @@ div.homeDiv{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   background-color: rgb(28, 34, 49);
@@ -25,7 +25,6 @@ div.homeContent{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
 
   margin:0px;
   padding:0px;
