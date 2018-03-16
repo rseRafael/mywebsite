@@ -7,16 +7,40 @@ div.portfolioDiv{
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
 
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(245, 245, 245);
 }
 
 p.portfolioParagraph{
   font-size: 35px;
   color: rgb(50, 50, 50);
   border-bottom-width: 3px;
-  border-bottom-color: rgb(180, 180, 180);
+  border-bottom-color: rgb(150, 150, 150);
   border-bottom-style: solid;
+}
+
+
+div.projectShower{
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+div.projectWindow{
+  height: 180px;
+  width: 205px;
+
+  background-color: rgb(150, 150, 150);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#eyeIcon{
+  font-size: 60px;
+  color: rgb(50, 50, 50);
 }

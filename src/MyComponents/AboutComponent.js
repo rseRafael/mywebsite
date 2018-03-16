@@ -137,6 +137,20 @@ class About extends Component{
               <div className = "imageHolder"><Image imgSrc={py_logo} imgAlt={"Python 2 & 3"} imgId={"pyLogo"} rate={"three"}/></div>
             </div>
           </div>
+          <div className="meAbout">
+            <img className="imageMeAbout" src="" alt="" />
+            <p id="meAboutHeader">{`Who am i ?`}</p>
+            <p className="textMeAbout">
+              <p>
+                {
+                `I'm a softare developer who lives in Rio de janeiro, BR. I have a passion for programming, software as well as math. Currently i'm studying computer science at `
+                }
+              <a href="https://www.google.com/ufrj">Ufrj</a>
+              </p>
+
+              <a href="">{`Let me help you.`}</a>
+            </p>
+          </div>
       </div>
 
     );
