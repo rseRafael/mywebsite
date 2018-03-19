@@ -7,7 +7,7 @@ export class Home extends Component{
   constructor(props){
     super(props);
     this.Variables={
-      words: ["WebSites", "Web Applications", "Front-end Development", "Backend Development", ],
+      words: ["WebSites", "Web Applications", "Front-end Development", "Back-end Development", "Responsive WebSites", "UI" ],
       index: 0,
       index2: 0,
       text: "",
@@ -40,9 +40,47 @@ export class Home extends Component{
     );
     document.getElementById('clickDiv').onclick = ()=>{
       console.log(getNavBarHeight());
-      goTo(navObj.divs[0] - getNavBarHeight(), 600);
+      goTo(navObj.divHeight[0] - getNavBarHeight(), 600);
     }
     this.locateMainContent();
+    document.getElementById('clickDiv').onmouseover = ()=>{
+      var divs = [
+        document.getElementById('clickDiv'),
+        document.getElementById('roundDivOne'),
+        document.getElementById('roundDivTwo'),
+        document.getElementById('myParagraphDiv'),
+      ];
+      console.log("mouseOuver");
+      for(var i of divs){
+        if(i.className.search('activeClickableDiv') === -1){
+          i.className += " activeClickableDiv";
+        }
+        i.style.backgroundColor = "rgb(227, 27, 109)";
+        i.style.color = "white";
+        i.style.animationName = "none";
+        console.log("Ouver", i.style.backgroundColor);
+      }
+    };
+
+    document.getElementById('clickDiv').onmouseout = ()=>{
+      var divs = [
+        document.getElementById('clickDiv'),
+        document.getElementById('roundDivOne'),
+        document.getElementById('roundDivTwo'),
+        document.getElementById('myParagraphDiv'),
+      ];
+      console.log("mouseOut");
+      for(var i of divs){
+        if(i.className.search('activeClickableDiv') !== -1){
+          i.className = i.classList[0];
+        }
+        i.style.backgroundColor = "";
+        i.style.color = "";
+        i.style.animationName = "";
+        console.log("Out", i.style.backgroundColor);
+      }
+    };
+
   }
   componentWillUnmount() {
     clearInterval(this.outDoor);
@@ -92,7 +130,7 @@ export class Home extends Component{
   }
   locateMainContent(){
     document.getElementById('homeMainContent').className += " locateContent";
-    document.getElementById('homeMainContent').style.top = navObj.divs[0]/3;
+    document.getElementById('homeMainContent').style.top = navObj.divHeight[0]/3;
     console.log('done');
   }
 
@@ -104,7 +142,11 @@ export class Home extends Component{
               <p className="homeParagraph">{`Hello, I'm `}<span id="Home">{'Rafael Santos'}</span>. {`I'm a software developer.`}</p>
               <p className="homeParagraph unactiveBorder" id='variableText'>{"I work with "} <span id="Home">{this.state.text}</span>{this.state.dot}</p>
           </div>
-          <div className="clickableDiv" id="clickDiv"></div>
+          <div className="clickableDiv" id="clickDiv">
+            <div className="roundDiv" id="roundDivOne"></div>
+            <p className="roundDivParagraph" id="myParagraphDiv">{`Click to know more about me`}</p>
+            <div className="roundDiv" id="roundDivTwo"></div>
+          </div>
         </div>
         <NavBar/>
       </div>

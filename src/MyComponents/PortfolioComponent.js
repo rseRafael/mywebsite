@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import './PortfolioStyle.css';
 class Portfolio extends Component{
-  constructor(props){
-    super(props);
-
-  }
   render(){
     return(
       <div className="portfolioDiv" id="Portfolio">

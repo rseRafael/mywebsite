@@ -6,54 +6,55 @@ import css_logo from '../images/css_logo.png';
 import react_logo from '../images/react_logo.svg';
 import node_logo from '../images/node_logo.jpg';
 import py_logo from '../images/python_logo.jpg';
+import {navObj, goTo} from './NavigationBarComponent.js';
 
-var heightSize = null, widthSize = null;
+var imgHeight, imgWidth, rateHeight;
 
 class Image extends Component{
   constructor(props){
     super(props);
     this.rate = {
       'one': (<div className="ratingDiv" id={this.props.imgId + "Rate"}>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
               </div>),
       'two': (<div className="ratingDiv" id={this.props.imgId + "Rate"}>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
               </div>),
       'three': (<div className="ratingDiv" id={this.props.imgId + "Rate"}>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
               </div>),
       'four': (<div className="ratingDiv" id={this.props.imgId + "Rate"}>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate" ></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate" ></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
               </div>),
       'four-and-a-hald':(<div className="ratingDiv" id={this.props.imgId + "Rate"}>
-                            <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                            <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                            <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                            <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                            <i className="fas fa-star" style={{fontSize:20, color: "rgba(0,0,0,0.5)"}}></i>
+                            <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                            <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                            <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                            <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                            <i className="fas fa-star" style={{  color: "rgba(0,0,0,0.5)"}} id="iconRate"></i>
                          </div>),
       'five': (<div className="ratingDiv" id={this.props.imgId + "Rate"}>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
-                <i className="fas fa-star" style={{fontSize:20, color: "rgb(255, 215, 7)"}}></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
+                <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
               </div>),
     }
     this.Var = {
@@ -61,12 +62,16 @@ class Image extends Component{
       'thisRateDiv': document.getElementById(this.props.imgId + "Rate"),
     }
   }
+
   getRateHeight(){
-    var height = null;
-    document.getElementById(this.props.imgId + "Rate").display = "flex";
-    height = document.getElementById(this.props.imgId + "Rate").clientHeight;
-    document.getElementById(this.props.imgId + "Rate").display = "none";
-    return height;
+    if(document.getElementById(this.props.imgId + "Rate")!== "none"){
+      rateHeight = document.getElementById(this.props.imgId + "Rate").clientHeight;
+    };
+    return rateHeight;
+  }
+  getImgSize(){
+    imgHeight = document.getElementById(this.props.imgId).clientHeight;
+    imgWidth = document.getElementById(this.props.imgId).clientWidth;
   }
 
   componentDidMount(){
@@ -74,8 +79,9 @@ class Image extends Component{
     document.getElementById(this.props.imgId).onmouseover = ()=>{
       try{
         document.getElementById(this.props.imgId + "Rate").className += " imgActived";
-          document.getElementById(this.props.imgId).style.height =  String(heightSize - this.getRateHeight()  ) + "px";
-          document.getElementById(this.props.imgId).style.width =  String(widthSize - this.getRateHeight()  ) + "px";
+        this.getImgSize();
+        document.getElementById(this.props.imgId).style.height =  String(imgHeight - this.getRateHeight()  ) + "px";
+        document.getElementById(this.props.imgId).style.width =  String(imgWidth - this.getRateHeight()  ) + "px";
       }
       catch(e){
         console.log("Error whith mouseouver", e);
@@ -85,16 +91,14 @@ class Image extends Component{
     document.getElementById(this.props.imgId).onmouseout = ()=>{
       try{
         document.getElementById(this.props.imgId + "Rate").className = document.getElementById(this.props.imgId + "Rate").classList[0];
-        document.getElementById(this.props.imgId).style.height =  heightSize + "px";
-        document.getElementById(this.props.imgId).style.width =  widthSize + "px";
+        document.getElementById(this.props.imgId).style.height =  null;
+        document.getElementById(this.props.imgId).style.width =  null;
       }
       catch(e){
         console.log("Error whith mouseout", e);
         //do nothing
       }
     }
-    heightSize = document.getElementById(this.props.imgId).clientHeight;
-    widthSize = document.getElementById(this.props.imgId).clientWidth;
   }
   render(){
     return(
@@ -117,6 +121,10 @@ class About extends Component{
       },
       50
     );
+    document.getElementById('clickMoreAbout').onclick = () =>{
+      console.log(navObj.divHeight[0] + navObj.divHeight[1]/2);
+      goTo(navObj.divHeight[0] + Math.round(navObj.divHeight[1]/2));
+    };
   }
   componentWillUnmount(){
     clearInterval(this.clockOne);
@@ -125,6 +133,7 @@ class About extends Component{
     return(
       <div className="AboutDiv" id="About">
           <div className="softwareAbout">
+
             <p className="aboutParagraph" >Software Skills</p>
             <div className="imageRow">
               <div className = "imageHolder"><Image imgSrc={js_logo} imgAlt={"Javascript"} imgId={"jsLogo"} rate={"four"}/></div>
@@ -136,18 +145,22 @@ class About extends Component{
               <div className = "imageHolder"><Image imgSrc={node_logo} imgAlt={"Node.JS"} imgId={"nodejsLogo"} rate={"one"}/></div>
               <div className = "imageHolder"><Image imgSrc={py_logo} imgAlt={"Python 2 & 3"} imgId={"pyLogo"} rate={"three"}/></div>
             </div>
+            <div id="clickMoreAbout"><p>Know More</p></div>
           </div>
-          <div className="meAbout">
+
+
+
+
+          <div className="meAbout" id="moreAboutMe">
             <img className="imageMeAbout" src="" alt="" />
             <p id="meAboutHeader">{`Who am i ?`}</p>
             <p className="textMeAbout">
               <p>
-                {
-                `I'm a softare developer who lives in Rio de janeiro, BR. I have a passion for programming, software as well as math. Currently i'm studying computer science at `
-                }
+                {`I'm a software developer who lives in Rio de janeiro, Brazil. I have a passion that ranges from User Interfaces to backend server programming.`}
+                <br/>
+                {`Currently i'm studying computer science at `}
               <a href="https://www.google.com/ufrj">Ufrj</a>
               </p>
-
               <a href="">{`Let me help you.`}</a>
             </p>
           </div>

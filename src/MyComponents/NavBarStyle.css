@@ -80,3 +80,19 @@
   border-color: red;
   border-style: solid;
 }
+
+
+.navBarDivSmall{
+  height: 7vh;
+  width: 100%;
+  box-sizing: border-box;
+
+  background-color: rgb(28, 34, 60);
+  border-bottom-width: 5px;
+  border-bottom-style: solid;
+  border-bottom-color: lightblue;
+
+  display: flex;
+  just
+  padding: 0px;
+}
