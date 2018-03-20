@@ -10,8 +10,9 @@ var intervalHolder = null;
 
 var goTo = function(place, time = 300, clock = 25){
   var change = null;
+  place = Math.round(place);
   if(place > document.documentElement.scrollTop){
-    change = (place - document.documentElement.scrollTop) / (time/clock);
+    change = Math.round( (place - document.documentElement.scrollTop) / (time/clock) );
     if(intervalHolder === null){
       intervalHolder = setInterval(
         ()=>{
