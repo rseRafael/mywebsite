@@ -143,7 +143,7 @@ div.iconsContainer{
   color: lightblue;
 }
 .fa-whatsapp:hover{
-  color: green;
+  color: red;
 }
 .inputBox{
   box-sizing: border-box;

@@ -57,10 +57,6 @@ class Image extends Component{
                 <i className="fas fa-star" style={{  color: "rgb(255, 215, 7)"}} id="iconRate"></i>
               </div>),
     }
-    this.Var = {
-      'self': document.getElementById(this.props.imgId),
-      'thisRateDiv': document.getElementById(this.props.imgId + "Rate"),
-    }
   }
 
   getRateHeight(){
@@ -127,8 +123,8 @@ class About extends Component{
       50
     );
     document.getElementById('clickMoreAbout').onclick = () =>{
-      console.log(navObj.divHeight[0] + navObj.divHeight[1]/2);
-      goTo(navObj.divHeight[0] + Math.round(navObj.divHeight[1]/2));
+      console.log(navObj.divHeight[0] + Math.round(navObj.divHeight[1]/2) - navObj.self.clientHeight);
+      goTo(navObj.divHeight[0] + Math.round(navObj.divHeight[1]/2) - navObj.self.clientHeight);
     };
   }
 
@@ -139,24 +135,24 @@ class About extends Component{
   render(){
     return(
       <div className="AboutDiv" id="About">
-          <div className="softwareAbout">
 
-            <p className="aboutParagraph" >Software Skills</p>
-            <div className="imageRow">
-              <div className = "imageHolder"><Image imgSrc={js_logo} imgAlt={"Javascript"} imgId={"jsLogo"} rate={"four"}/></div>
-              <div className = "imageHolder"><Image imgSrc={html_logo} imgAlt={"HTML"} imgId={"htmlLogo"} rate={"four"}/></div>
-              <div className = "imageHolder"><Image imgSrc={css_logo} imgAlt={"CSS"} imgId={"cssLogo"} rate={"four"}/></div>
-            </div>
-            <div className="imageRow bottomBorder">
-              <div className = "imageHolder"><Image imgSrc={react_logo} imgAlt={"React and React Native"} imgId={"reactLogo"} rate={"three"}/></div>
-              <div className = "imageHolder"><Image imgSrc={node_logo} imgAlt={"Node.JS"} imgId={"nodejsLogo"} rate={"one"}/></div>
-              <div className = "imageHolder"><Image imgSrc={py_logo} imgAlt={"Python 2 & 3"} imgId={"pyLogo"} rate={"three"}/></div>
-            </div>
-            <div id="clickMoreAbout">
-              <div id="roundDivAboutOne"></div>
-              <p>Know More</p>
-              <div id="roundDivAboutTwo"></div>
-            </div>
+          <div className="softwareAbout">
+              <p className="aboutParagraph" >Skills</p>
+              <div className="imageRow">
+                <div className = "imageHolder"><Image imgSrc={js_logo} imgAlt={"Javascript"} imgId={"jsLogo"} rate={"four"}/></div>
+                <div className = "imageHolder"><Image imgSrc={html_logo} imgAlt={"HTML"} imgId={"htmlLogo"} rate={"four"}/></div>
+                <div className = "imageHolder"><Image imgSrc={css_logo} imgAlt={"CSS"} imgId={"cssLogo"} rate={"four"}/></div>
+              </div>
+              <div className="imageRow bottomBorder">
+                <div className = "imageHolder"><Image imgSrc={react_logo} imgAlt={"React and React Native"} imgId={"reactLogo"} rate={"three"}/></div>
+                <div className = "imageHolder"><Image imgSrc={node_logo} imgAlt={"Node.JS"} imgId={"nodejsLogo"} rate={"one"}/></div>
+                <div className = "imageHolder"><Image imgSrc={py_logo} imgAlt={"Python 2 & 3"} imgId={"pyLogo"} rate={"three"}/></div>
+              </div>
+              <div id="clickMoreAbout">
+                <div id="roundDivAboutOne"></div>
+                <p>Know More</p>
+                <div id="roundDivAboutTwo"></div>
+              </div>
           </div>
 
           <div className="meAbout" id="moreAboutMe">

@@ -2,7 +2,7 @@
 /*Por Algum motivo esta merda nao esta funcionando*/
 div.AboutDiv{
   box-sizing: border-box;
-  height: 150vh;
+  height: 200vh;
   width: 100%;
 
   display: flex;
@@ -92,7 +92,7 @@ div.imgActived{
 }
 
 div.softwareAbout{
-  height: 60vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -118,9 +118,10 @@ div.bottomBorder{
 /*MeAbout Div*/
 
 div.meAbout{
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: ;
+  justify-content: center;
   align-items: center;
 
 

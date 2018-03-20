@@ -1,5 +1,5 @@
 div.portfolioDiv{
-  height: 100vh;
+  height: 93vh;
   width: 100%;
 
   padding: 0px;
@@ -44,6 +44,12 @@ div.projectWindow{
 #eyeIcon{
   font-size: 60px;
   color: rgb(50, 50, 50);
+}
+
+@media screen and (max-height: 800px){
+  div.projectWindow{
+    height: 100px;
+  }
 }
 
 @media screen and (max-width: 1230px){

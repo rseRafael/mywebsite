@@ -15,6 +15,7 @@ var goTo = function(place, time = 300, clock = 25){
     if(intervalHolder === null){
       intervalHolder = setInterval(
         ()=>{
+          console.log(place, document.documentElement.scrollTop, change);
           if(document.documentElement.scrollTop < place){
             document.documentElement.scrollTop += change;
             console.log("changed scrolltop");
@@ -102,7 +103,7 @@ class NavBar extends Component{
       goTo(navObj.divHeight[0] + navObj.divHeight[1] - getNavBarHeight());
     };
     navObj.links[3].onclick = ()=>{
-      goTo(navObj.divHeight[0] + navObj.divHeight[1] + navObj.divHeight[3] + navObj.divHeight[4]);
+      goTo(document.documentElement.scrollTopMax);
     };
   }
 
