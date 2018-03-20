@@ -109,11 +109,16 @@ class Image extends Component{
     )
   }
 }
+
+
+
 class About extends Component{
+
   constructor(props){
     super(props);
     this.state={width:document.documentElement.offsetWidth + 15 }
   }
+
   componentDidMount(){
     this.clockOne = setInterval(
       ()=>{
@@ -126,9 +131,11 @@ class About extends Component{
       goTo(navObj.divHeight[0] + Math.round(navObj.divHeight[1]/2));
     };
   }
+
   componentWillUnmount(){
     clearInterval(this.clockOne);
   }
+
   render(){
     return(
       <div className="AboutDiv" id="About">
@@ -145,11 +152,12 @@ class About extends Component{
               <div className = "imageHolder"><Image imgSrc={node_logo} imgAlt={"Node.JS"} imgId={"nodejsLogo"} rate={"one"}/></div>
               <div className = "imageHolder"><Image imgSrc={py_logo} imgAlt={"Python 2 & 3"} imgId={"pyLogo"} rate={"three"}/></div>
             </div>
-            <div id="clickMoreAbout"><p>Know More</p></div>
+            <div id="clickMoreAbout">
+              <div id="roundDivAboutOne"></div>
+              <p>Know More</p>
+              <div id="roundDivAboutTwo"></div>
+            </div>
           </div>
-
-
-
 
           <div className="meAbout" id="moreAboutMe">
             <img className="imageMeAbout" src="" alt="" />
@@ -168,6 +176,7 @@ class About extends Component{
 
     );
   }
+
 }
 
 export {About};

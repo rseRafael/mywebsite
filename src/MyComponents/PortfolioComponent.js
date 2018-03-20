@@ -18,7 +18,7 @@ class Portfolio extends Component{
         </div>
         <div className="projectShower">
           <div className="projectWindow"><i class="fas fa-eye-slash" id="eyeIcon"></i></div>
-          <div className="projectWindow"><i class="fas fa-eye-slash" id="eyeIcon"></i></div>
+          <div className="projectWindow"><i class="fas fa-eye-slash"  id="eyeIcon"></i></div>
           <div className="projectWindow"><i class="fas fa-eye-slash" id="eyeIcon"></i></div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-div.ContactDiv{
+  div.ContactDiv{
    height: 95vh;
    width: 100%;
 
@@ -115,6 +115,50 @@ div.iconsContainer{
   animation-iteration-count: 1;
 }
 
+.ContactClickButton{
+  height: 5vh;
+  width: 100px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: purple;
+  opacity: 0.5;
+  color: white;
+
+  cursor: pointer;
+
+  position: relative;
+  top: 50px;
+}
+.fa-github:hover{
+  color:grey;
+}
+.fa-envelope-square:hover{
+  color: rgb(180, 0, 0);
+}
+.fa-linkedin:hover{
+  color: lightblue;
+}
+.fa-whatsapp:hover{
+  color: green;
+}
+.inputBox{
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+
+}
+.active{
+  cursor: pointer;
+}
+
+.fa-spinner{
+  display: none;
+}
+
 @media screen and (max-width: 1380px){
   div.formOrganizer{
     width: 55%;
@@ -130,7 +174,9 @@ div.iconsContainer{
     align-items: center;
     width: 15%;
   }
-
+  div.ContactClickButton{
+    width: 100px;
+  }
 }
 
 @media screen and (max-width: 1130px){

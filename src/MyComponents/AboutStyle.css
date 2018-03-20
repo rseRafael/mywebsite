@@ -71,8 +71,10 @@ i#shit{
 .imageSettings{
   height: 135px;
   width: 135px;
-
-  border-top-right-radius: 50%;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 div.imgActived{
@@ -168,6 +170,25 @@ div.imageRow{
 a.linkText{
   cursor: pointer;
 }
+
+#clickMoreAbout{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  border-width: 1px;
+  background-color: purple;
+  opacity: 0.8;
+  color: white;
+  font-size: 15px;
+  border-style: solid;
+  border-color: purple;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+
 @media screen and (max-width: 800px){
   img.imageSettings{
       height: 100px;
